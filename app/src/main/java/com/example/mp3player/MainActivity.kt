@@ -82,4 +82,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    override fun onDestroy() {
+        stopService(Intent(this, MediaPlayerService::class.java))
+        super.onDestroy()
+    }
 }

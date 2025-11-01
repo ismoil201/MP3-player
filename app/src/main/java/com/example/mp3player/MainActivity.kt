@@ -1,5 +1,6 @@
 package com.example.mp3player
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -50,22 +51,34 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun mediaPlayerStop() {
+        val intent = Intent(this, MediaPlayerService::class.java)
+            .apply { action = MEDIA_PLAYER_STOP }
+        startService(intent)
 
-        mediaPlayer?.stop()
-        mediaPlayer?.release()
-        mediaPlayer  = null
+
+//        mediaPlayer?.stop()
+//        mediaPlayer?.release()
+//        mediaPlayer  = null
     }
 
     private fun mediaPlayerPause() {
-        mediaPlayer?.pause()
+        val intent = Intent(this, MediaPlayerService::class.java)
+            .apply { action = MEDIA_PLAYER_PAUSE }
+        startService(intent)
+
+
+//        mediaPlayer?.pause()
     }
 
     private fun mediaPlayerPlay() {
+        val intent = Intent(this, MediaPlayerService::class.java)
+            .apply { action = MEDIA_PLAYER_PLAY }
+        startService(intent)
 
-        if(mediaPlayer==null){
-            mediaPlayer = MediaPlayer.create(this,R.raw.xcho)
-        }
-        mediaPlayer?.start()
+//        if(mediaPlayer==null){
+//            mediaPlayer = MediaPlayer.create(this,R.raw.xcho)
+//        }
+//        mediaPlayer?.start()
 
     }
 

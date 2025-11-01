@@ -3,9 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:padding="14dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f5e5ca"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:src="@drawable/img_2"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flow_buttons"
@@ -14,6 +24,7 @@
         app:constraint_referenced_ids="btn_pause, btn_play, btn_stop"
         android:orientation="horizontal"
         app:flow_horizontalGap="8dp"
+        app:layout_constraintVertical_bias="0.7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
